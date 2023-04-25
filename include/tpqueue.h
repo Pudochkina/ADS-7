@@ -2,6 +2,9 @@
 #ifndef INCLUDE_TPQUEUE_H_
 #define INCLUDE_TPQUEUE_H_
 
+#include <iostream>
+#include <string>
+
 template<typename T>
 class TPQueue {
   private:
@@ -28,9 +31,9 @@ class TPQueue {
             delete head;
             head = temp;
             return data;
-        } else {
+        } else 
             throw std::string("Empty!");
-        }
+        
     }
     void push (const T& data) {
         QItem * temp = head;
@@ -41,9 +44,9 @@ class TPQueue {
             tail -> next = item;
             tail -> next -> prev = tail;
             tail = item;
-        } else if (!temp && !head) {
+        } else if (!temp && !head) 
             head = tail = item;
-        } else if (!temp -> prev) {
+          else if (!temp -> prev) {
             temp -> prev = item;
             item -> next = temp;
             head = item;
