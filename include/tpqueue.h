@@ -7,7 +7,7 @@
 
 template<typename T>
 class TPQueue {
-  private:
+ private:
     struct QItem {
         T data;
         QItem * next;
@@ -32,15 +32,15 @@ class TPQueue {
             head = temp;
             return data;
         } else 
-            throw std::string("Empty!");
+            throw std::string ("Empty!");
         
     }
     void push (const T& data) {
         QItem * temp = head;
-        QItem * item = create(data);
+        QItem * item = create (data);
         while (temp && temp -> data.prior >= data.prior)
             temp = temp -> next;
-        if (!temp && head) { 
+        if (!temp && head) {
             tail -> next = item;
             tail -> next -> prev = tail;
             tail = item;
@@ -50,7 +50,7 @@ class TPQueue {
             temp -> prev = item;
             item -> next = temp;
             head = item;
-        } else { 
+        } else {
             temp -> prev -> next = item;
             item -> prev = temp -> prev;
             item -> next = temp;
