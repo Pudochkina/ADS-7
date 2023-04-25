@@ -2,7 +2,6 @@
 #ifndef INCLUDE_TPQUEUE_H_
 #define INCLUDE_TPQUEUE_H_
 
-#include <iostream>
 #include <string>
 
 template<typename T>
@@ -21,7 +20,7 @@ class TPQueue {
         item -> prev = nullptr;
         return item;
     }
- public:
+  public:
     T pop() {
         if (head) {
             QItem * temp = head -> next;
