@@ -20,7 +20,8 @@ class TPQueue {
         item -> prev = nullptr;
         return item;
     }
-  public:
+ 
+ public:
     T pop() {
         if (head) {
             QItem * temp = head -> next;
