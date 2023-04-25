@@ -31,22 +31,22 @@ class TPQueue {
             delete head;
             head = temp;
             return data;
-        } else 
-            throw std::string ("Empty!");
-        
+        } else {
+            throw std::string("Empty!");
+        }
     }
-    void push (const T& data) {
+    void push(const T& data) {
         QItem * temp = head;
-        QItem * item = create (data);
+        QItem * item = create(data);
         while (temp && temp -> data.prior >= data.prior)
             temp = temp -> next;
         if (!temp && head) {
             tail -> next = item;
             tail -> next -> prev = tail;
             tail = item;
-        } else if (!temp && !head) 
+        } else if (!temp && !head) {
             head = tail = item;
-          else if (!temp -> prev) {
+        } else if (!temp -> prev) {
             temp -> prev = item;
             item -> next = temp;
             head = item;
